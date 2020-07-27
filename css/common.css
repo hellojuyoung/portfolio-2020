@@ -1,0 +1,328 @@
+body {
+  font-family: "Poppins", "Noto Sans KR", sans-serif;
+  background-color: #efefed;
+}
+
+/* hide scrollbar */
+body * {
+  /* IE and Edge */
+  -ms-overflow-style: none;
+  /* Firefox */
+  scrollbar-width: none;
+}
+
+body * ::-webkit-scrollbar {
+  /* Chrome, Safari, Opera*/
+  display: none;
+}
+
+
+
+.blind {
+  display: none;
+  font-size: 0 !important;
+}
+
+
+
+/* color */
+.green {
+  color: #204d22;
+}
+
+.humid-green {
+  color: #b5cbb6;
+}
+
+.humid-gray {
+  color: #efefed;
+}
+
+.dark-blue {
+  color: #23242e;
+}
+
+.pink {
+  color: #f06182 !important;
+}
+
+
+
+/* tag */
+.tag {
+  display: inline-block;
+  height: 25px;
+  line-height: 25px;
+  padding: 0 15px;
+  margin-bottom: 15px;
+  border: 1px solid #fff;
+  border-radius: 15px;
+}
+
+
+
+.highlighter {
+  position: relative;
+}
+
+.highlighter:after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 5px;
+  left: 0;
+  background-color: #fff;
+  content: '';
+  z-index: -1;
+}
+
+
+
+
+/* header */
+#header {
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  padding: 10px 30px;
+  top: 0;
+  box-sizing: border-box;
+  background: linear-gradient(to bottom, #fff, rgba(255, 255, 255, 0));
+  z-index: 100;
+}
+
+h1 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.logo {
+  float: left;
+  margin-top: 20px;
+}
+
+/* gnb */
+.gnb {
+  position: absolute;
+  width: 45%;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all .5s;
+}
+
+nav {
+  height: 100%;
+}
+
+.nav-grp {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-grp li {
+  width: 30%;
+  text-align: center;
+}
+
+.nav-grp li a {
+  font-size: 17px;
+  color: #204d22;
+}
+
+.top-right {
+  float: right;
+}
+
+.icon {
+  display: block;
+  width: 33px;
+  margin-top: 15px;
+  text-align: center;
+  transition: 0.5s;
+}
+
+.icon i {
+  font-size: 25px;
+  color: #204d22;
+}
+
+.icon .icon-name {
+  font-size: 8px;
+  margin-top: 3px;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.icon:hover {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.icon:hover .icon-name {
+  display: block;
+  opacity: 1;
+}
+
+/* mobie gnb */
+.mobile-gnb-wrap {
+  display: none;
+}
+
+
+
+/* section */
+.cont-wrap {
+  position: relative;
+  width: 100%;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+
+.cont-wrap .tit {
+  font-size: 38px;
+  font-weight: 500;
+  line-height: 48px;
+  letter-spacing: -1px;
+  color: #204d22;
+}
+
+.cont-wrap .sub-tit {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.cont-wrap .desc {
+  margin-bottom: 35px;
+}
+
+.cont-wrap .desc:last-child {
+  margin-bottom: 0;
+}
+
+/* explain Page */
+.explain-page {
+  position: fixed;
+  top: 5%;
+  left: 5%;
+  margin-top: 100px;
+  font-size: 14px;
+  /*font-weight: 300;*/
+  line-height: 20px;
+  color: #204d22;
+  opacity: 1;
+  z-index: 5;
+}
+
+.explain-page .tit {
+  margin-bottom: 15px;
+}
+
+/*.explain-page .desc {
+  width: 35%;
+}*/
+
+
+
+/* footer */
+#footer {
+  position: fixed;
+  width: 100%;
+  padding: 5px 30px 13px;
+  bottom: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 300;
+  color: #204d22;
+  z-index: 95;
+}
+
+.contact-info {
+  position: absolute;
+  left: 20%;
+  margin-left: 45px;
+}
+
+.contact-info a {
+  margin-right: 130px;
+  color: #204d22;
+  text-decoration: underline;
+}
+
+.footer-right {
+  float: right;
+  font-weight: 500;
+}
+
+
+
+/* modal */
+.modal {
+  position: fixed;
+  /*display: none;*/
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.modal.on {
+  height: 100%;
+}
+
+.modal .dimmed {
+  width: 100%;
+  height: 0;
+  background-color: #000;
+  opacity: 0;
+  transition: opacity .5s;
+}
+
+.modal .dimmed.on {
+  height: 100%;
+  opacity: .9;
+}
+
+.modal .modal-box {
+  position: fixed;
+  width: 90%;
+  top: -100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal .modal-box.on {
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal .modal-box .cont-wrap {
+  display: none;
+}
+
+.modal .modal-box.on .cont-wrap {
+  display: block;
+}
+
+.close {
+  all: unset;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+.close i {
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+  color: #b5cbb6;
+}

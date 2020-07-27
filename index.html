@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="initial-scale=1.0, width=device-width" class="next-head" />
+  <title>shinjuyoung</title>
+
+  <link rel="icon" href="favicon.png" />
+
+  <link rel="stylesheet" href="./css/main.css" />
+  <!-- tablet style -->
+  <link rel="stylesheet" media="only screen and (min-width:768px) and (max-width:1023px)" href="../css/tablet.css" />
+  <!-- mobile style -->
+  <link rel="stylesheet" media="only screen and (min-width:320px) and (max-width:767px)" href="../css/mobile.css" />
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
+  <!-- XEICON -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="./js/default.js"></script>
+
+  <script>
+    function includeHTML() {
+      var z, i, elmnt, file, xhttp;
+      /* Loop through a collection of all HTML elements: */
+      z = document.getElementsByTagName("*");
+      for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain atrribute:*/
+        file = elmnt.getAttribute("include-html");
+        if (file) {
+          /* Make an HTTP request using the attribute value as the file name: */
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4) {
+              if (this.status == 200) {
+                elmnt.innerHTML = this.responseText;
+              }
+              if (this.status == 404) {
+                elmnt.innerHTML = "Page not found.";
+              }
+              /* Remove the attribute, and call this function once more: */
+              elmnt.removeAttribute("include-html");
+              includeHTML();
+            }
+          }
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          /* Exit the function: */
+          return;
+        }
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <header>
+    <div id="header" include-html="../include/header.html"></div>
+  </header>
+
+  <section>
+    <!-- main(intro) : s -->
+    <div id="main">
+      <!-- intro curtain : s -->
+      <div class="intro">
+        <div class="intro-txt">
+          <div class="typing-box">
+            <span class="green"></span>
+          </div>
+        </div>
+      </div>
+      <!-- intro curtain : e -->
+      <!-- description : s -->
+      <div class="cont-wrap">
+        <div class="main-box">
+          <div class="introduce-myself">
+            <div class="main-img-grp">
+              <img src="./img/common/speech_bubble.png" class="hello" alt="말풍선" />
+              <img src="./img/common/illust.png" class="shake-hand" alt="손" />
+            </div>
+            <div class="intro-rolling">
+              <h2 class="green">
+                안녕하세요, 반갑습니다.<br />
+                <div class="random-key-wrap"><span class="highlighter random-key humid-green">웹 퍼블리셔</span></div><br />
+                신주영입니다.
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- intro description : e -->
+    </div>
+    <!-- main(intro) : e -->
+  </section>
+
+  <footer>
+    <div id="footer" include-html="./include/footer.html"></div>
+  </footer>
+
+  <script>
+    includeHTML();
+  </script>
+</body>
+
+</html>

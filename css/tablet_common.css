@@ -1,0 +1,46 @@
+/* 제목태그 */
+h1 {
+    font-size: 3vw;
+}
+
+.gnb {
+    width: 43%;
+    right: 9%;
+    left: auto;
+    margin-left: auto;
+    transform: unset;
+}
+
+.nav-grp li a {
+    line-height: 1;
+}
+
+
+/* contents */
+.cont-wrap {
+    padding: 0 5%;
+}
+
+.cont-wrap .tit {
+    font-size: 4.3vw;
+    line-height: 5vw;
+}
+
+
+
+/* main */
+.main-box {
+    width: 90%;
+}
+
+
+
+/* footer */
+.contact-info {
+    left: auto;
+    margin-left: 0;
+}
+
+.contact-info a {
+    margin-right: 50px;
+}

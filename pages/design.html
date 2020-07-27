@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="initial-scale=1.0, width=device-width" class="next-head" />
+   <title>design | shinjuyoung</title>
+
+   <link rel="icon" href="../favicon.png" />
+
+   <link rel="stylesheet" href="../css/jquery.fullPage.css" />
+   <link rel="stylesheet" href="../css/main.css" />
+   <!-- tablet style -->
+   <link rel="stylesheet" media="only screen and (min-width:768px) and (max-width:1023px)" href="../css/tablet.css" />
+   <!-- mobile style -->
+   <link rel="stylesheet" media="only screen and (min-width:320px) and (max-width:767px)" href="../css/mobile.css" />
+   <!-- fontawesome -->
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
+
+   <!-- XEICON -->
+   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+
+   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+   <script src="../js/default.js"></script>
+   <!-- mousewheel -->
+   <script src="../js/jquery.mousewheel.min.js"></script>
+
+   <script>
+      function includeHTML() {
+         var z, i, elmnt, file, xhttp;
+         /* Loop through a collection of all HTML elements: */
+         z = document.getElementsByTagName("*");
+         for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            /*search for elements with a certain atrribute:*/
+            file = elmnt.getAttribute("include-html");
+            if (file) {
+               /* Make an HTTP request using the attribute value as the file name: */
+               xhttp = new XMLHttpRequest();
+               xhttp.onreadystatechange = function () {
+                  if (this.readyState == 4) {
+                     if (this.status == 200) {
+                        elmnt.innerHTML = this.responseText;
+                     }
+                     if (this.status == 404) {
+                        elmnt.innerHTML = "Page not found.";
+                     }
+                     /* Remove the attribute, and call this function once more: */
+                     elmnt.removeAttribute("include-html");
+                     includeHTML();
+                  }
+               }
+               xhttp.open("GET", file, true);
+               xhttp.send();
+               /* Exit the function: */
+               return;
+            }
+         }
+      }
+
+
+      //마우스휠 가로 스크롤
+      function wheelHorizontal() {
+         $(".thumb-img-wrap").mousewheel(function (event, delta) {
+            this.scrollLeft -= (delta * 30);
+            event.preventDefault();
+            //alert('wrk?');
+         });
+      }
+   </script>
+</head>
+
+<body>
+   <header>
+      <div id="header" include-html="../include/header.html"></div>
+   </header>
+
+   <section>
+      <!-- design : s -->
+      <div id="design">
+         <!-- description : s -->
+         <div class="cont-wrap">
+            <div class="explain-page">
+               <h2 class="tit">Selected Works<br>2019 - 2020</h2>
+               <p class="desc">
+                  쇼핑몰 유지보수 프로젝트에서 웹 퍼블리셔 및 디자이너로 참여하며,
+                  제작한 기획전 이미지 중 일부 작업물 입니다.<br>
+                  슬라이드 배너, 이벤트 리스트 썸네일, 이벤트 페이지와
+                  팝업배너, 브랜드 검색 소재로 구성되어 있습니다.
+               </p>
+            </div>
+            <div class="thumb-img-wrap">
+               <ul class="design-grp">
+                  <li class="thumb">
+                     <a href="#design-box-01">
+                        <div class="cont-box">
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <h2 class="tit">뉴케어액티브 +<br>클로렐라 플래티넘<br>증정 이벤트</h2>
+                           <span class="date">2020</span>
+                        </div>
+                        <img src="../img/design/newcareActive_chlorella_pu_pc.png" alt="뉴케어액티브+클로렐라플래티넘 썸네일">
+                     </a>
+                  </li>
+                  <li class="thumb">
+                     <a href="#design-box-02">
+                        <div class="cont-box">
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <h2 class="tit">뉴케어액티브<br>퀴즈이벤트</h2>
+                           <span class="date">2020</span>
+                        </div>
+                        <img src="../img/design/newcareQuiz_evt.png" alt="뉴케어액티브퀴즈이벤트 썸네일">
+                     </a>
+                  </li>
+                  <li class="thumb">
+                     <a href="#design-box-03">
+                        <div class="cont-box">
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <h2 class="tit">오! 마이밀<br>이벤트</h2>
+                           <span class="date">2020</span>
+                        </div>
+                        <img src="../img/design/ohmymeal_pu_pc.png" alt="오!마이밀 퀴즈이벤트 썸네일">
+                     </a>
+                  </li>
+                  <li class="thumb">
+                     <a href="#design-box-04">
+                        <div class="cont-box">
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <h2 class="tit">마이밀Nu<br>뉴프로틴 TVCF<br>ON-AIR 기념</h2>
+                           <span class="date">2019</span>
+                        </div>
+                        <img src="../img/design/mymealNuproteinTVCF_pu_pc.png" alt="마이밀뉴프로틴 TVCF 기념 썸네일">
+                     </a>
+                  </li>
+                  <li class="thumb">
+                     <a href="#design-box-05">
+                        <div class="cont-box">
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <h2 class="tit">마이밀Nu뉴프로틴 런칭이벤트</h2>
+                           <span class="date">2019</span>
+                        </div>
+                        <img src="../img/design/mymealNuprotein_evt.png" alt="마이밀뉴프로틴 런칭이벤트 썸네일">
+                     </a>
+                  </li>
+                  <li class="thumb">
+                     <a href="#design-box-06">
+                        <div class="cont-box">
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <h2 class="tit">11월에는<br>마이밀 11% 할인</h2>
+                           <span class="date">2019</span>
+                        </div>
+                        <img src="../img/design/novembermymeal_pu_pc.png" alt="11월에는 마이밀 11% 할인 썸네일">
+                     </a>
+                  </li>
+                  <li class="thumb">
+                     <a href="#design-box-07">
+                        <div class="cont-box">
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <h2 class="tit">마이밀Fit<br>7,900원</h2>
+                           <span class="date">2019</span>
+                        </div>
+                        <img src="../img/design/mymealfit7900_evt.png" alt="11월에는 마이밀 11% 할인 썸네일">
+                     </a>
+                  </li>
+                  <li class="thumb">
+                     <a href="#design-box-08">
+                        <div class="cont-box">
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <h2 class="tit">마이밀 반값<br>체험이벤트</h2>
+                           <span class="date">2019</span>
+                        </div>
+                        <img src="../img/design/mymealhalfprice_pu_pc.png" alt="마이밀 반값 체험이벤트 썸네일">
+                     </a>
+                  </li>
+                  <li class="thumb">
+                     <a href="#design-box-09">
+                        <div class="cont-box">
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <h2 class="tit">추석 선물 기획전</h2>
+                           <span class="date">2019</span>
+                        </div>
+                        <img src="../img/design/thanksGiving_pu_pc.png" alt="추석 선물 기획전 썸네일">
+                     </a>
+                  </li>
+                  <li class="thumb">
+                     <a href="#design-box-10">
+                        <div class="cont-box">
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <h2 class="tit">마이밀 2종<br>43% 할인이벤트</h2>
+                           <span class="date">2019</span>
+                        </div>
+                        <img src="../img/design/mymeal43_evt.png" alt="마이밀 2종 43% 할인이벤트 썸네일">
+                     </a>
+                  </li>
+                  <li class="thumb">
+                     <a href="#design-box-11">
+                        <div class="cont-box">
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <h2 class="tit">마이밀Fit 9,900원</h2>
+                           <span class="date">2019</span>
+                        </div>
+                        <img src="../img/design/mymealfit9900_evt.png" alt="마이밀Fit 9,900원 썸네일">
+                     </a>
+                  </li>
+                  <li class="thumb">
+                     <a href="#design-box-12">
+                        <div class="cont-box">
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <span class="outline"></span>
+                           <h2 class="tit">마이밀Fit 2+1</h2>
+                           <span class="date">2019</span>
+                        </div>
+                        <img src="../img/design/mymealfit2+1_pu_pc.png" alt="마이밀Fit 2+1 썸네일">
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <!-- intro description : e -->
+
+         <!-- modal : s -->
+         <div class="modal design-set">
+            <div class="dimmed"></div>
+            <button class="close"><i class="xi-close"></i></button>
+            <div id="design-box-01" class="modal-box">
+               <div class="cont-wrap">
+                  <div class="design-info">
+                     <h2 class="tit">뉴케어 액티브 + 클로렐라 플래티넘 증정 이벤트</h2>
+                     <span class="project-name">대상웰라이프몰</span>
+                  </div>
+                  <div class="design-img">
+                     <div class="img-wrap">
+                        <figure>
+                           <figcaption>롤링 배너</figcaption>
+                           <img class="img_w" src="../img/design/newcareActive_chlorella_rb_pc.png"
+                              alt="뉴케어액티브+클로렐라플래티넘 증정이벤트">
+                           <img src="../img/design/newcareActive_chlorella_rb_mo.png" style="width:50%;"
+                              alt="뉴케어액티브+클로렐라플래티넘 증정이벤트">
+                        </figure>
+                        <figure>
+                           <figcaption>팝업 배너</figcaption>
+                           <img src="../img/design/newcareActive_chlorella_pu_pc.png" style="width:50%;"
+                              alt="뉴케어액티브+클로렐라플래티넘 증정이벤트">
+                           <img class="img_w" src="../img/design/newcareActive_chlorella_pu_mo.png" style="width:30%;"
+                              alt="뉴케어액티브+클로렐라플래티넘 증정이벤트">
+                        </figure>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div id="design-box-02" class="modal-box">
+               <div class="cont-wrap">
+                  <div class="design-info">
+                     <h2 class="tit">뉴케어액티브 퀴즈이벤트</h2>
+                     <span class="project-name">대상웰라이프몰</span>
+                  </div>
+                  <div class="design-img">
+                     <div class="img-wrap">
+                        <figure>
+                           <figcaption>롤링 배너</figcaption>
+                           <img class="img_w" src="../img/design/newcareQuiz_rb_pc.png" alt="뉴케어액티브 퀴즈이벤트">
+                           <img src="../img/design/newcareQuiz_rb_mo.png" style="width:50%;" alt="뉴케어액티브 퀴즈이벤트">
+                        </figure>
+                        <figure>
+                           <figcaption>[Sub]이벤트 페이지</figcaption>
+                           <img class="img_w" src="../img/design/newcareQuiz_evt.png" alt="뉴케어액티브 퀴즈이벤트">
+                        </figure>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div id="design-box-03" class="modal-box">
+               <div class="cont-wrap">
+                  <div class="design-info">
+                     <h2 class="tit">오! 마이밀 이벤트</h2>
+                     <span class="project-name">대상웰라이프몰</span>
+                  </div>
+                  <div class="design-img">
+                     <div class="img-wrap">
+                        <figure>
+                           <figcaption>롤링 배너</figcaption>
+                           <img class="img_w" src="../img/design/ohmymeal_rb_pc.png" alt="오!마이밀 이벤트">
+                           <img src="../img/design/ohmymeal_rb_mo.png" style="width:50%;" alt="오!마이밀 이벤트">
+                        </figure>
+                        <figure>
+                           <figcaption>팝업 배너</figcaption>
+                           <img src="../img/design/ohmymeal_pu_pc.png" style="width:50%;" alt="오!마이밀 이벤트">
+                           <img class="img_w" src="../img/design/ohmymeal_pu_mo.png" style="width:30%;" alt="오!마이밀 이벤트">
+                        </figure>
+                        <figure>
+                           <figcaption>[Sub]이벤트 페이지</figcaption>
+                           <img class="img_w" src="../img/design/ohmymeal_evt.png" alt="오!마이밀 이벤트">
+                        </figure>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div id="design-box-04" class="modal-box">
+               <div class="cont-wrap">
+                  <div class="design-info">
+                     <h2 class="tit">마이밀Nu뉴프로틴 TVCF ON-AIR 기념</h2>
+                     <span class="project-name">대상웰라이프몰</span>
+                  </div>
+                  <div class="design-img">
+                     <div class="img-wrap">
+                        <figure>
+                           <figcaption>롤링 배너</figcaption>
+                           <img class="img_w" src="../img/design/mymealNuproteinTVCF_rb_pc.png"
+                              alt="마이밀뉴Nu프로틴 TVCF ON-AIR기념">
+                           <img src="../img/design/mymealNuproteinTVCF_rb_mo.png" style="width:50%;"
+                              alt="마이밀뉴Nu프로틴 TVCF ON-AIR기념">
+                        </figure>
+                        <figure>
+                           <figcaption>팝업 배너</figcaption>
+                           <img src="../img/design/mymealNuproteinTVCF_pu_pc.png" style="width:50%;"
+                              alt="마이밀뉴Nu프로틴 TVCF ON-AIR기념">
+                           <img class="img_w" src="../img/design/mymealNuproteinTVCF_pu_mo.png" style="width:30%;"
+                              alt="마이밀뉴Nu프로틴 TVCF ON-AIR기념">
+                        </figure>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div id="design-box-05" class="modal-box">
+               <div class="cont-wrap">
+                  <div class="design-info">
+                     <h2 class="tit">마이밀Nu뉴프로틴 런칭이벤트</h2>
+                     <span class="project-name">대상웰라이프몰</span>
+                  </div>
+                  <div class="design-img">
+                     <div class="img-wrap">
+                        <figure>
+                           <figcaption>롤링 배너</figcaption>
+                           <img class="img_w" src="../img/design/mymealNuprotein_rb_pc.png" alt="마이밀뉴Nu프로틴 런칭이벤트">
+                           <img src="../img/design/mymealNuprotein_rb_mo.png" style="width:50%;" alt="마이밀뉴Nu프로틴 런칭이벤트">
+                        </figure>
+                        <figure>
+                           <figcaption>[Sub]이벤트 페이지</figcaption>
+                           <img class="img_w" src="../img/design/mymealNuprotein_evt.png" alt="마이밀뉴Nu프로틴 런칭이벤트">
+                        </figure>
+                        <figure>
+                           <figcaption>브랜드 검색 소재 배너</figcaption>
+                           <img src="../img/design/mymealNuprotein_brand_pc.png" style="width:40%;"
+                              alt="마이밀뉴Nu프로틴 런칭이벤트">
+                           <img class="img_w" src="../img/design/mymealNuprotein_brand_mo.png" style="width:15%;"
+                              alt="마이밀뉴Nu프로틴 런칭이벤트">
+                        </figure>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div id="design-box-06" class="modal-box">
+               <div class="cont-wrap">
+                  <div class="design-info">
+                     <h2 class="tit">11월에는 마이밀 11% 할인</h2>
+                     <span class="project-name">대상웰라이프몰</span>
+                  </div>
+                  <div class="design-img">
+                     <div class="img-wrap">
+                        <figure>
+                           <figcaption>롤링 배너</figcaption>
+                           <img class="img_w" src="../img/design/novembermymeal_rb_pc.png" alt="11월에는 마이밀 11% 할인">
+                           <img src="../img/design/novembermymeal_rb_mo.png" style="width:50%;" alt="11월에는 마이밀 11% 할인">
+                        </figure>
+                        <figure>
+                           <figcaption>팝업 배너</figcaption>
+                           <img class="img_w" src="../img/design/novembermymeal_pu_pc.png" style="width:50%"
+                              alt="11월에는 마이밀 11% 할인">
+                           <img class="img_w" src="../img/design/novembermymeal_pu_mo.png" style="width:30%"
+                              alt="11월에는 마이밀 11% 할인">
+                        </figure>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div id="design-box-07" class="modal-box">
+               <div class="cont-wrap">
+                  <div class="design-info">
+                     <h2 class="tit">마이밀Fit 7,900</h2>
+                     <span class="project-name">대상웰라이프몰</span>
+                  </div>
+                  <div class="design-img">
+                     <div class="img-wrap">
+                        <figure>
+                           <figcaption>롤링 배너</figcaption>
+                           <img class="img_w" src="../img/design/mymealfit7900_rb_pc.png" alt="마이밀Fit 7900">
+                           <img src="../img/design/mymealfit7900_rb_mo.png" style="width:50%;" alt="마이밀Fit 7900">
+                        </figure>
+                        <figure>
+                           <figcaption>[Sub]이벤트 페이지</figcaption>
+                           <img class="img_w" src="../img/design/mymealfit7900_evt.png" alt="마이밀Fit 7900">
+                        </figure>
+                        <figure>
+                           <figcaption>브랜드 검색 소재 배너</figcaption>
+                           <img src="../img/design/mymealfit7900_brand_pc.png" style="width:40%;" alt="마이밀Fit 7900">
+                           <img class="img_w" src="../img/design/mymealfit7900_brand_mo.png" style="width:15%;"
+                              alt="마이밀Fit 7900">
+                        </figure>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div id="design-box-08" class="modal-box">
+               <div class="cont-wrap">
+                  <div class="design-info">
+                     <h2 class="tit">마이밀 반값 체험이벤트</h2>
+                     <span class="project-name">대상웰라이프몰</span>
+                  </div>
+                  <div class="design-img">
+                     <div class="img-wrap">
+                        <figure>
+                           <figcaption>롤링 배너</figcaption>
+                           <img class="img_w" src="../img/design/mymealhalfprice_rb_pc.png" alt="마이밀 반값 체험이벤트">
+                           <img src="../img/design/mymealhalfprice_rb_mo.png" style="width:50%;" alt="마이밀 반값 체험이벤트">
+                        </figure>
+                        <figure>
+                           <figcaption>팝업 배너</figcaption>
+                           <img src="../img/design/mymealhalfprice_pu_pc.png" style="width:50%;" alt="마이밀 반값 체험이벤트">
+                           <img class="img_w" src="../img/design/mymealhalfprice_pu_mo.png" style="width:30%;"
+                              alt="마이밀 반값 체험이벤트">
+                        </figure>
+                        <figure>
+                           <figcaption>[Sub]이벤트 페이지</figcaption>
+                           <img class="img_w" src="../img/design/mymealhalfprice_evt.png" alt="마이밀 반값 체험이벤트">
+                        </figure>
+                        <figure>
+                           <figcaption>브랜드 검색 소재 배너</figcaption>
+                           <img src="../img/design/mymealhalfprice_brand_pc.png" style="width:40%;" alt="마이밀 반값 체험이벤트">
+                           <img class="img_w" src="../img/design/mymealhalfprice_brand_mo.png" style="width:15%;"
+                              alt="마이밀 반값 체험이벤트">
+                        </figure>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div id="design-box-09" class="modal-box">
+               <div class="cont-wrap">
+                  <div class="design-info">
+                     <h2 class="tit">추석 선물 기획전</h2>
+                     <span class="project-name">대상웰라이프몰</span>
+                  </div>
+                  <div class="design-img">
+                     <div class="img-wrap">
+                        <figure>
+                           <figcaption>롤링 배너</figcaption>
+                           <img class="img_w" src="../img/design/thanksGiving_rb_pc.png" alt="추석 선물 기획전">
+                           <img src="../img/design/thanksGiving_rb_mo.png" style="width:50%;" alt="추석 선물 기획전">
+                        </figure>
+                        <figure>
+                           <figcaption>팝업 배너</figcaption>
+                           <img src="../img/design/thanksGiving_pu_pc.png" style="width:50%;" alt="추석 선물 기획전">
+                           <img class="img_w" src="../img/design/thanksGiving_pu_mo.png" style="width:30%;"
+                              alt="추석 선물 기획전">
+                        </figure>
+                        <figure>
+                           <figcaption>[Sub]이벤트 페이지</figcaption>
+                           <img class="img_w" src="../img/design/thanksGiving_evt.png" alt="추석 선물 기획전">
+                        </figure>
+                        <figure>
+                           <figcaption>브랜드 검색 소재 배너</figcaption>
+                           <img src="../img/design/thanksGiving_brand_pc.png" style="width:40%;" alt="추석 선물 기획전">
+                           <img class="img_w" src="../img/design/thanksGiving_brand_mo.png" style="width:15%;"
+                              alt="추석 선물 기획전">
+                        </figure>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div id="design-box-10" class="modal-box">
+               <div class="cont-wrap">
+                  <div class="design-info">
+                     <h2 class="tit">마이밀 2종 43% 할인이벤트</h2>
+                     <span class="project-name">대상웰라이프몰</span>
+                  </div>
+                  <div class="design-img">
+                     <div class="img-wrap">
+                        <figure>
+                           <figcaption>롤링 배너</figcaption>
+                           <img class="img_w" src="../img/design/mymeal43_rb_pc.png" alt="마이밀 2종 할인이벤트">
+                           <img src="../img/design/mymeal43_rb_mo.png" style="width:50%;" alt="마이밀 2종 할인이벤트">
+                        </figure>
+                        <figure>
+                           <figcaption>[Sub]이벤트 페이지</figcaption>
+                           <img class="img_w" src="../img/design/mymeal43_evt.png" alt="마이밀 2종 할인이벤트">
+                        </figure>
+                        <figure>
+                           <figcaption>브랜드 검색 소재 배너</figcaption>
+                           <img src="../img/design/mymeal43_brand_pc.png" style="width:40%;" alt="마이밀 2종 할인이벤트">
+                           <img class="img_w" src="../img/design/mymeal43_brand_mo.png" style="width:15%;"
+                              alt="마이밀 2종 할인이벤트">
+                        </figure>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div id="design-box-11" class="modal-box">
+               <div class="cont-wrap">
+                  <div class="design-info">
+                     <h2 class="tit">마이밀Fit 9,900원</h2>
+                     <span class="project-name">대상웰라이프몰</span>
+                  </div>
+                  <div class="design-img">
+                     <div class="img-wrap">
+                        <figure>
+                           <figcaption>롤링 배너</figcaption>
+                           <img class="img_w" src="../img/design/mymealfit9900_rb_pc.png" alt="마이밀Fit 9900">
+                           <img src="../img/design/mymealfit9900_rb_mo.png" style="width:50%;" alt="마이밀Fit 9900">
+                        </figure>
+                        <figure>
+                           <figcaption>[Sub]이벤트 페이지</figcaption>
+                           <img class="img_w" src="../img/design/mymealfit9900_evt.png" alt="마이밀Fit 9900">
+                        </figure>
+                        <figure>
+                           <figcaption>브랜드 검색 소재 배너</figcaption>
+                           <img src="../img/design/mymealfit9900_brand_pc.png" style="width:50%;" alt="마이밀Fit 9900">
+                           <img class="img_w" src="../img/design/mymealfit9900_brand_mo.png" style="width:30%;"
+                              alt="마이밀Fit 9900">
+                        </figure>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div id="design-box-12" class="modal-box">
+               <div class="cont-wrap">
+                  <div class="design-info">
+                     <h2 class="tit">마이밀Fit 2+1</h2>
+                     <span class="project-name">대상웰라이프몰</span>
+                  </div>
+                  <div class="design-img">
+                     <div class="img-wrap">
+                        <figure>
+                           <figcaption>롤링 배너</figcaption>
+                           <img class="img_w" src="../img/design/mymealfit2+1_rb_pc.png" alt="마이밀Fit 2+1">
+                           <img src="../img/design/mymealfit2+1_rb_mo.png" style="width:50%;" alt="마이밀Fit 2+1">
+                        </figure>
+                        <figure>
+                           <figcaption>팝업 배너</figcaption>
+                           <img src="../img/design/mymealfit2+1_pu_pc.png" style="width:50%;" alt="마이밀Fit 2+1">
+                           <img class="img_w" src="../img/design/mymealfit2+1_pu_mo.png" style="width:30%;"
+                              alt="마이밀Fit 2+1">
+                        </figure>
+                        <figure>
+                           <figcaption>[Sub]이벤트 페이지</figcaption>
+                           <img class="img_w" src="../img/design/mymealfit2+1_evt.png" alt="마이밀Fit 2+1">
+                        </figure>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- modal : e -->
+      </div>
+      <!-- design : e -->
+   </section>
+
+   <footer>
+      <div id="footer" include-html="../include/footer.html"></div>
+   </footer>
+
+   <script>
+      includeHTML();
+      wheelHorizontal();
+   </script>
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+.intro .intro-txt .typing-box {
+    font-size: 9vw;
+}
+
+.intro-desc p {
+    font-size: 1rem;
+}
+
+.introduce-myself .intro-rolling h2 {
+    font-size: 7vw;
+    line-height: 9vw;
+}
+
+.introduce-myself .intro-rolling .random-key-wrap {
+    height: 8.5vw;
+}
+
+.introduce-myself .intro-rolling .random-key {
+    height: 8.5vw;
+}
+
+.introduce-myself .intro-rolling .hello {
+    width: 9vw;
+    left: 41vw;
+    margin-bottom: 0;
+}
+
+
+
+/* main */
+.hello {
+    width: 30vw;
+    top: 7%;
+    left: 60%;
+}
+
+.shake-hand {
+    width: 55vw;
+    margin-left: 3%;
+}
+
+
+.introduce-myself .intro-rolling {
+    right: 5%;
+}
+
+
+
+/* about */
+#about .about-grp {
+    width: 95%;
+}
+
+.about-grp .align-right .big-img {
+    bottom: 10%;
+    transform: unset;
+}
+
+.profile-box {
+    padding: 5% 4%;
+}
+
+.profile-box.small {
+    width: 49%;
+    top: 6%;
+    left: auto;
+    right: 0;
+}
+
+
+
+/* publish */
+#publish .thumb-info-wrap {
+    top: 60%;
+}
+
+#publish .thumb-img-wrap .publish-grp {
+    right: -5%;
+}
+
+#publish .thumb-img-wrap .publish-grp .thumb .img-box {
+    height: 90%;
+}
+
+#publish .thumb-img-wrap .publish-grp .thumb.active .img-box .short-img {
+    margin-top: 30%;
+}
+
+
+
+
+
+/* design */
+#design .explain-page {
+    width: 35%;
+    left: auto;
+}
+
+#design .explain-page .desc {
+    width: 100%;
+}
+
+#design .thumb-img-wrap {
+    position: fixed;
+    width: 100%;
+}
+
+#design .thumb-img-wrap .design-grp {
+    height: 90%;
+}
+
+#design .thumb-img-wrap .design-grp .thumb {
+    width: 40vw;
+    height: 50vw;
+}
+
+.modal.design-set .design-info {
+    top: 7%;
+}
+
+.modal.design-set .design-img .img-wrap {
+    width: 100%;
+    margin: 30vw 0 5vw;
+}
+
+.modal.design-set .tit {
+    margin-bottom: 30px;
+}
+
+.modal.design-set .modal-box.on {
+    width: 75%;
+}

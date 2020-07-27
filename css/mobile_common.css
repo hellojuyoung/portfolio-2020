@@ -1,0 +1,275 @@
+#header {
+    height: 55px;
+    padding: 5px 5%;
+    box-sizing: border-box;
+}
+
+#header .contact-info {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    left: unset;
+    position: static;
+    margin: 35vw 0 0 50%;
+    transform: translateX(-50%);
+}
+
+#header .contact-info a {
+    display: block;
+    font-size: 3.5vw;
+    font-weight: 300;
+    line-height: 4vw;
+    color: #b5cbb6;
+    text-decoration: none;
+    margin: 0;
+}
+
+#header .contact-info i {
+    font-size: 4vw;
+    margin-right: 10px;
+}
+
+#header .contact-info span {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    color: #b5cbb6;
+    margin-bottom: 10px;
+}
+
+
+.logo {
+    position: absolute;
+    float: unset;
+    left: 50%;
+    margin: 0;
+    transform: translateX(-50%);
+    font-size: 4.5vw;
+    line-height: 45px;
+}
+
+.tag {
+    height: 23px;
+    line-height: 23px;
+    margin-bottom: 5px;
+    padding: 0 2.5vw;
+    font-size: 3vw;
+    font-weight: 300;
+}
+
+
+
+/* close */
+.close {
+    top: 15px;
+    right: 5%;
+}
+
+.close i {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #b5cbb6;
+    background-color: #b5cbb6;
+    border-radius: 100%;
+    font-size: 16px;
+    text-align: center;
+    line-height: 23px;
+    box-sizing: border-box;
+}
+
+
+
+/* pc, tablet gnb */
+.gnb {
+    display: none;
+}
+
+
+
+/* mobie gnb */
+.mobile-gnb-wrap {
+    position: fixed;
+    display: block;
+}
+
+.mobile-gnb-btn {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    width: 25px;
+    height: 25px;
+    top: 10px;
+    left: 0;
+    background: #204d20;
+    border-radius: 100%;
+    text-align: center;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.mobile-gnb-btn * {
+    transition: all .5s;
+}
+
+.mobile-gnb-btn.on {
+    background: #efefed;
+    z-index: 100;
+}
+
+.mobile-gnb-btn>i {
+    width: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 25px;
+    color: #efefed;
+}
+
+.mobile-gnb-btn.on>i {
+    color: #204d20;
+}
+
+.mobile-gnb-btn .xi-close {
+    margin-left: -25px;
+}
+
+.mobile-gnb-btn.on .xi-close {
+    margin-left: 0;
+}
+
+.mobile-gnb-btn.on .xi-bars {
+    margin-right: -25px;
+}
+
+.icon {
+    width: 25px;
+    margin-top: 10px;
+}
+
+.icon:hover {
+    display: block;
+    margin-top: 10px;
+}
+
+.icon:hover .icon-name {
+    display: none;
+}
+
+.mobile-nav-wrap.on {
+    display: block;
+    height: 100%;
+    opacity: 1;
+}
+
+.mobile-nav-wrap:before,
+.mobile-nav-wrap:after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 10px;
+    left: 5%;
+    border-radius: 100%;
+    transform: scale(0);
+    transition: all 1s;
+}
+
+.mobile-nav-wrap:before {
+    background: rgba(181, 203, 182, .7);
+    z-index: 97;
+}
+
+.mobile-nav-wrap:after {
+    background: rgba(32, 77, 34, .9);
+    z-index: 98;
+}
+
+.mobile-nav-wrap.on:before {
+    transform: scale(100);
+}
+
+.mobile-nav-wrap.on:after {
+    transform: scale(100);
+    transition-delay: .2s;
+}
+
+.mobile-nav-wrap .mobile-nav {
+    display: none;
+}
+
+.mobile-nav-wrap.on .mobile-nav {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 70vw;
+    top: 40%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+
+.mobile-nav-wrap.on .mobile-nav .nav-grp {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    /*z-index: 99;*/
+    animation-fill-mode: both;
+}
+
+.mobile-nav-wrap.on .mobile-nav .nav-grp,
+.mobile-nav-wrap.on .mobile-nav .contact-info {
+    animation: mobileNavShow .9s alternate ease-in-out;
+}
+
+.mobile-nav .nav-grp li a {
+    font-size: 7vw;
+    color: #fff;
+}
+
+
+
+.cont-wrap {
+    padding: 0 5%;
+}
+
+
+.cont-wrap .tit {
+    font-size: 5.5vw;
+    line-height: 7.5vw;
+}
+
+.cont-wrap .sub-tit {
+    font-size: 4vw;
+}
+
+.explain-page {
+    position: absolute;
+    width: 90%;
+    top: 0;
+}
+
+
+/* footer */
+#footer {
+    height: 35px;
+    padding: 3% 5%;
+    background-color: #efefed;
+}
+
+.contact-info {
+    display: none;
+}
+
+
+
+/* animation */
+
+@keyframes mobileNavShow {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
