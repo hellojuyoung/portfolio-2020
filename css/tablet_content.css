@@ -69,6 +69,13 @@
 
 
 
+#publish .thumb-img-wrap,
+#design .thumb-img-wrap {
+    min-height: auto;
+}
+
+
+
 /* publish */
 #publish .thumb-info-wrap {
     top: 60%;

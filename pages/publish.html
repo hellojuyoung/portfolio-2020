@@ -60,30 +60,32 @@
       }
 
 
-      //fullPage js, .thumb-info-wrap 마우스휠 이벤트
+      //fullPage js, .thumb-info-wrap 스크롤 이벤트
       function rolligFullpage() {
          $(".thumb-img-wrap").fullpage({
             autoScrolling: true,
             sectionSelector: ".section",
-            slideSelector: ".thumb"
+            slideSelector: ".thumb",
+            anchors: ['p01', 'p02', 'p03', 'p04', 'p05'],
+            menu: ".thumb-info-wrap"
          });
 
          //pc browser + firefox
-         $("body").on("mousewheel DOMMouseScroll", function () {
+         //$(".thumb-img-wrap .thumb").on("mousewheel DOMMouseScroll", function () {
+         //   connectInfo();
+         //});
 
-            var findIndex = $(".thumb-img-wrap").find(".active").index();
+         //////tablet, mobile
+         //$(".tablet .publish-grp, .mobile .publish-grp").on("touchend", function () {
+         //   connectInfo();
+         //});
 
-            $(".thumb-info-wrap").find(".info").eq(findIndex).addClass("on").siblings().removeClass("on");
+         ////active와 동일한 인덱스 값을 가진 info 출력
+         //function connectInfo() {
+         //   var findIndex = $(".thumb-img-wrap").find(".active").index();
 
-         });
-
-         ////tablet, mobile
-         $(".publish-grp").on("touchend", function () {
-
-            var findIndex = $(".thumb-img-wrap").find(".active").index();
-            $(".thumb-info-wrap").find(".info").eq(findIndex).addClass("on").siblings().removeClass("on");
-
-         });
+         //   $(".thumb-info-wrap").find(".info").eq(findIndex).addClass("on").siblings().removeClass("on");
+         //}
 
       }
    </script>
@@ -101,7 +103,7 @@
          <div class="cont-wrap">
             <div class="thumb-info-wrap">
                <ul class="publish-grp">
-                  <li class="info on">
+                  <li class="info active" data-menuanchor="p01">
                      <h2 class="tit">숙소 공유 플랫폼</h2>
                      <div class="label-grp">
                         <span class="label pink">Personal Project</span>
@@ -116,7 +118,7 @@
                         <img src="../img/common/go_view.png" alt="웹사이트 바로가기">
                      </a>
                   </li>
-                  <li class="info">
+                  <li class="info" data-menuanchor="p02">
                      <h2 class="tit">대상웰라이프</h2>
                      <div class="label-grp">
                         <span class="label">유지보수 및 일부 개편</span>
@@ -131,7 +133,7 @@
                         <img src="../img/common/go_view.png" alt="웹사이트 바로가기">
                      </a>
                   </li>
-                  <li class="info">
+                  <li class="info" data-menuanchor="p03">
                      <h2 class="tit">스페라 케어</h2>
                      <div class="label-grp">
                         <span class="label">일부 개편</span>
@@ -148,7 +150,7 @@
                         <img src="../img/common/go_view.png" alt="웹사이트 바로가기">
                      </a>
                   </li>
-                  <li class="info">
+                  <li class="info" data-menuanchor="p04">
                      <h2 class="tit">Gontran Cherrier</h2>
                      <div class="label-grp">
                         <span class="label pink">Personal Project</span>
@@ -162,7 +164,7 @@
                         <img src="../img/common/go_view.png" alt="웹사이트 바로가기">
                      </a>
                   </li>
-                  <li class="info">
+                  <li class="info" data-menuanchor="p05">
                      <h2 class="tit">닥터런드리</h2>
                      <div class="label-grp">
                         <span class="label pink">Personal Project</span>
@@ -181,27 +183,27 @@
             </div>
             <div class="thumb-img-wrap">
                <ul id="fullpage" class="publish-grp">
-                  <li class="thumb section">
+                  <li class="thumb section" data-anchor="p01">
                      <div class="img-box">
                         <img src="../img/publish/airbnb_pc.png" alt="숙소 공유 플랫폼 화면">
                      </div>
                   </li>
-                  <li class="thumb section">
+                  <li class="thumb section" data-anchor="p02">
                      <div class="img-box">
                         <img src="../img/publish/wellife_pc.png" alt="대상웰라이프 웹사이트 화면">
                      </div>
                   </li>
-                  <li class="thumb section">
+                  <li class="thumb section" data-anchor="p03">
                      <div class="img-box">
                         <img src="../img/publish/spera_pc.png" alt="스페라케어 인증서 관리 웹사이트 화면" class="short-img">
                      </div>
                   </li>
-                  <li class="thumb section">
+                  <li class="thumb section" data-anchor="p04">
                      <div class="img-box">
                         <img src="../img/publish/gontran_pc.png" alt="곤트란쉐리에 웹사이트 화면">
                      </div>
                   </li>
-                  <li class="thumb section">
+                  <li class="thumb section" data-anchor="p05">
                      <div class="img-box">
                         <img src="../img/publish/doctorlaundry_pc.png" alt="닥터런드리 웹사이트 화면">
                      </div>

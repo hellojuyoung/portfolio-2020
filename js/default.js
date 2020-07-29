@@ -24,6 +24,17 @@ $(document).ready(function () {
 
   }
 
+  //design 페이지 썸네일 그룹 width
+  function applyWidth() {
+
+    var thumbWidth = $(".thumb-img-wrap .design-grp").find(".thumb").width() + 20;
+    var thumbLength = $(".thumb-img-wrap .design-grp").find(".thumb").length;
+
+    $(".thumb-img-wrap .design-grp").css({
+      width: thumbWidth * thumbLength
+    });
+  }
+
 
 
   //intro slideUp
@@ -40,7 +51,7 @@ $(document).ready(function () {
   //반응형 웹을 위한 이벤트 분리 (add Device Class)
   function addDeviceClass() {
     if ($(window).width() > 1023) {
-      //pc web
+      applyWidth();
       $("body").removeClass("tablet mobile");
     } else if ($(window).width() > 767) {
       //tablet web

@@ -18,6 +18,14 @@ body * ::-webkit-scrollbar {
 
 
 
+button {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+
+
 .blind {
   display: none;
   font-size: 0 !important;
