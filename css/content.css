@@ -82,8 +82,9 @@
 
 .shake-hand {
   position: static;
+  max-width: 500px;
   transform: rotate(30deg);
-  margin-top: 20%;
+  margin-top: 17%;
   margin-left: -30px;
 }
 
